@@ -74,7 +74,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<div class="container">
 			
 			<div class="logo">
-				<h1 ><a href="index.php"><b>T<br>H<br>E</b>Grocery Store<span>The Best Supermarket</span></a></h1>
+				<h1 ><a href="index.php"><b>T<br>H<br>E</b>Obaida Grocery Store<span>The Best Supermarket</span></a></h1>
 			</div>
 			
 			<?php 
@@ -212,7 +212,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 								}*/
 
 								/*echo $vendor;*/
-								$q2= "SELECT * FROM products WHERE product_brand= 15 ";
+								$q2= "SELECT *, isEgyptian FROM products WHERE product_brand= 15 ";
 								$data2= mysqli_query($conn, $q2);
 								$total2= mysqli_num_rows($data2);
 								
@@ -227,10 +227,13 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 										<div class="women">
 											<h6>
 												<?php echo $res2['product_title'];?>
-											</h6>							
+											</h6>
+											<?php if($res2['isEgyptian'] == 1): ?>
+                                        		<p style="background-color: green;color: white; text-align: center; padding: 5px; margin-top: 5px; font-weight: bold;">Egyptian Product</p>
+                                   			<?php endif; ?>							
 										</div>
 										<div class="mid-2">
-											<p ><label> Rs <?php echo $res2['product_price'] +20;?></label><em class="item_price"> Rs <?php echo $res2['product_price'];?></em></p>
+											<p ><label> EGP <?php echo $res2['product_price'] +20;?></label><em class="item_price"> EGP <?php echo $res2['product_price'];?></em></p>
 											  <div class="block">
 												<div class="starbox small ghosting"> </div>
 											</div>
@@ -261,7 +264,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 											<h6><a href="single.php">Safety Pins</a>(100 g)</h6>							
 										</div>
 										<div class="mid-2">
-											<p ><label> RS 5.00</label><em class="item_price"> RS 4.50</em></p>
+											<p ><label> EGP 5.00</label><em class="item_price"> EGP 4.50</em></p>
 											  <div class="block">
 												<div class="starbox small ghosting"> </div>
 											</div>
@@ -283,7 +286,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 											<h6><a href="single.php">Agarbatti</a>(200 g)</h6>							
 										</div>
 										<div class="mid-2">
-											<p ><label> RS 4.00</label><em class="item_price"> RS 3.50</em></p>
+											<p ><label> EGP 4.00</label><em class="item_price"> EGP 3.50</em></p>
 											  <div class="block">
 												<div class="starbox small ghosting"> </div>
 											</div>
@@ -305,7 +308,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 											<h6><a href="single.php">Candle Set </a>(1 pc)</h6>							
 										</div>
 										<div class="mid-2">
-											<p ><label> RS 1.00</label><em class="item_price"> RS 0.80</em></p>
+											<p ><label> EGP 1.00</label><em class="item_price"> EGP 0.80</em></p>
 											  <div class="block">
 												<div class="starbox small ghosting"> </div>
 											</div>
@@ -328,7 +331,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 											<h6><a href="single.php">Dust Bin</a>(1 pc)</h6>							
 										</div>
 										<div class="mid-2">
-											<p ><label> RS 7.00</label><em class="item_price"> RS 6.00</em></p>
+											<p ><label> EGP 7.00</label><em class="item_price"> EGP 6.00</em></p>
 											  <div class="block">
 												<div class="starbox small ghosting"> </div>
 											</div>
@@ -350,7 +353,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 											<h6><a href="single.php"> Hanger</a>(1 pc)</h6>							
 										</div>
 										<div class="mid-2">
-											<p ><label> RS 5.00</label><em class="item_price"> RS 4.50</em></p>
+											<p ><label> EGP 5.00</label><em class="item_price"> EGP 4.50</em></p>
 											  <div class="block">
 												<div class="starbox small ghosting"> </div>
 											</div>
@@ -372,7 +375,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 											<h6><a href="single.php"> Pet Bowl</a>(1 pc)</h6>							
 										</div>
 										<div class="mid-2">
-											<p ><label> RS 4.00</label><em class="item_price"> RS 3.50</em></p>
+											<p ><label> EGP 4.00</label><em class="item_price"> EGP 3.50</em></p>
 											  <div class="block">
 												<div class="starbox small ghosting"> </div>
 											</div>
@@ -394,7 +397,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 											<h6><a href="single.php">Tailum</a>(500 g)</h6>							
 										</div>
 										<div class="mid-2">
-											<p ><label> RS 1.00</label><em class="item_price"> RS 0.80</em></p>
+											<p ><label> EGP 1.00</label><em class="item_price"> EGP 0.80</em></p>
 											  <div class="block">
 												<div class="starbox small ghosting"> </div>
 											</div>
@@ -416,7 +419,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 											<h6><a href="single.php"> Container</a>(1 pc)</h6>							
 										</div>
 										<div class="mid-2">
-											<p ><label> RS 7.00</label><em class="item_price"> RS 6.00</em></p>
+											<p ><label> EGP 7.00</label><em class="item_price"> EGP 6.00</em></p>
 											  <div class="block">
 												<div class="starbox small ghosting"> </div>
 											</div>
@@ -438,7 +441,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 											<h6><a href="single.php">Scrub Sponge</a>(100 g)</h6>							
 										</div>
 										<div class="mid-2">
-											<p ><label> RS 5.00</label><em class="item_price"> RS 4.50</em></p>
+											<p ><label> EGP 5.00</label><em class="item_price"> EGP 4.50</em></p>
 											  <div class="block">
 												<div class="starbox small ghosting"> </div>
 											</div>
@@ -460,7 +463,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 											<h6><a href="single.php">Reindeer </a>(1 pc)</h6>							
 										</div>
 										<div class="mid-2">
-											<p ><label> RS 4.00</label><em class="item_price"> RS 3.50</em></p>
+											<p ><label> EGP 4.00</label><em class="item_price"> EGP 3.50</em></p>
 											  <div class="block">
 												<div class="starbox small ghosting"> </div>
 											</div>
@@ -482,7 +485,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 											<h6><a href="single.php"> Cleaner</a>(1 pc)</h6>							
 										</div>
 										<div class="mid-2">
-											<p ><label> RS 1.00</label><em class="item_price"> RS 0.80</em></p>
+											<p ><label> EGP 1.00</label><em class="item_price"> EGP 0.80</em></p>
 											  <div class="block">
 												<div class="starbox small ghosting"> </div>
 											</div>
@@ -611,7 +614,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h3>Safety Pins(100 g)</h3>
 									<p class="in-para"> Some attractive header</p>
 									<div class="price_single">
-									  <span class="reducedfrom "><del> RS 10.00</del> RS 9.00</span>
+									  <span class="reducedfrom "><del> EGP 10.00</del> EGP 9.00</span>
 									
 									 <div class="clearfix"></div>
 									</div>
@@ -643,7 +646,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h3>Agarbatti(200 g)</h3>
 									<p class="in-para"> Some attractive header</p>
 									<div class="price_single">
-									  <span class="reducedfrom "><del> RS 3.00</del> RS 2.00</span>
+									  <span class="reducedfrom "><del> EGP 3.00</del> EGP 2.00</span>
 									
 									 <div class="clearfix"></div>
 									</div>
@@ -675,7 +678,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h3>Candle Set </h3>
 									<p class="in-para"> Some attractive header</p>
 									<div class="price_single">
-									  <span class="reducedfrom "><del> RS 4.00</del> RS 3.50</span>
+									  <span class="reducedfrom "><del> EGP 4.00</del> EGP 3.50</span>
 									
 									 <div class="clearfix"></div>
 									</div>
@@ -707,7 +710,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h3>Dust Bin(1 pc)</h3>
 									<p class="in-para"> Some attractive header</p>
 									<div class="price_single">
-									  <span class="reducedfrom "><del> RS 1.00</del> RS 0.70</span>
+									  <span class="reducedfrom "><del> EGP 1.00</del> EGP 0.70</span>
 									
 									 <div class="clearfix"></div>
 									</div>
@@ -739,7 +742,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h3>Hanger(1 pc)</h3>
 									<p class="in-para"> Some attractive header</p>
 									<div class="price_single">
-									  <span class="reducedfrom "><del> RS 1.00</del> RS 0.70</span>
+									  <span class="reducedfrom "><del> EGP 1.00</del> EGP 0.70</span>
 									
 									 <div class="clearfix"></div>
 									</div>
@@ -771,7 +774,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h3>Pet Bowl(1 pc)</h3>
 									<p class="in-para"> Some attractive header</p>
 									<div class="price_single">
-									  <span class="reducedfrom "><del> RS 2.00</del> RS 1.00</span>
+									  <span class="reducedfrom "><del> EGP 2.00</del> EGP 1.00</span>
 									
 									 <div class="clearfix"></div>
 									</div>
@@ -803,7 +806,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h3>Tailum(500 g)</h3>
 									<p class="in-para"> Some attractive header</p>
 									<div class="price_single">
-									  <span class="reducedfrom "><del> RS 4.00</del> RS 3.50</span>
+									  <span class="reducedfrom "><del> EGP 4.00</del> EGP 3.50</span>
 									
 									 <div class="clearfix"></div>
 									</div>
@@ -835,7 +838,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h3>Container(1 pc)</h3>
 									<p class="in-para"> Some attractive header</p>
 									<div class="price_single">
-									  <span class="reducedfrom "><del> RS 2.00</del> RS 1.50</span>
+									  <span class="reducedfrom "><del> EGP 2.00</del> EGP 1.50</span>
 									
 									 <div class="clearfix"></div>
 									</div>
@@ -867,7 +870,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h3>Scrub Sponge(100 g)</h3>
 									<p class="in-para"> Some attractive header</p>
 									<div class="price_single">
-									  <span class="reducedfrom "><del> RS 1.00</del> RS 0.70</span>
+									  <span class="reducedfrom "><del> EGP 1.00</del> EGP 0.70</span>
 									
 									 <div class="clearfix"></div>
 									</div>
@@ -899,7 +902,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h3>Xmas Reindeer (1 pc)</h3>
 									<p class="in-para"> Some attractive header</p>
 									<div class="price_single">
-									  <span class="reducedfrom "><del> RS 2.00</del> RS 1.00</span>
+									  <span class="reducedfrom "><del> EGP 2.00</del> EGP 1.00</span>
 									
 									 <div class="clearfix"></div>
 									</div>
@@ -931,7 +934,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h3>Cleaner(1 pc)</h3>
 									<p class="in-para"> Some attractive header</p>
 									<div class="price_single">
-									  <span class="reducedfrom "><del> RS 4.00</del> RS 3.50</span>
+									  <span class="reducedfrom "><del> EGP 4.00</del> EGP 3.50</span>
 									
 									 <div class="clearfix"></div>
 									</div>

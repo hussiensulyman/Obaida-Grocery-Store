@@ -74,7 +74,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<div class="container">
 			
 			<div class="logo">
-				<h1 ><a href="index.php"><b>T<br>H<br>E</b>Grocery Store<span>The Best Supermarket</span></a></h1>
+				<h1 ><a href="index.php"><b>T<br>H<br>E</b>Obaida Grocery Store<span>The Best Supermarket</span></a></h1>
 			</div>
 			<?php 
 			if(isset($_SESSION['customer']))
@@ -164,8 +164,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				<p> Info ..... </p>
 				<ul class="contact-list">
 					<li> <i class="fa fa-map-marker" aria-hidden="true"></i> Address .... </li>
-					<li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:mart@mail.com">mart@gmail.com</a></li>
-					<li> <i class="fa fa-phone" aria-hidden="true"></i>+91 1234567890</li>
+					<li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:Obaida-Grocery@mail.com">Obaida-Grocery@gmail.com</a></li>
+					<li> <i class="fa fa-phone" aria-hidden="true"></i>+20 1234567890</li>
 				</ul>
 				<div id="container">
 					<!--Horizontal Tab-->
