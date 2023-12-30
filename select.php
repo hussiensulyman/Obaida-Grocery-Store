@@ -5,7 +5,7 @@ error_reporting(0);
 if(isset($_POST["id"])){
 
 	$output = '';  
-    $q = "SELECT * FROM products WHERE product_id = '".$_POST["id"]."'"; 
+    $q = "SELECT *, isEgyptian FROM products WHERE product_id = '".$_POST["id"]."'"; 
 							
 	$data= mysqli_query($conn, $q);
 
@@ -17,6 +17,8 @@ if(isset($_POST["id"])){
 		$pro_price = $row['product_price'];
 		$pro_image = $row['product_image'];
 		$pro_desc = $row['product_desc'];
+		$pro_nationality = $row['isEgyptian'];
+        $egyptianProductLabel = $pro_nationality == 1 ? "<span style='background-color: green; color: white; padding: 3px 6px; font-weight: bold;'>Egyptian Product</span>" : "";
 
 
 		echo "
@@ -28,16 +30,17 @@ if(isset($_POST["id"])){
 								<div class='col-md-7 span-1'>
 									<h3>$pro_title</h3>
 									<p class='in-para'>$pro_desc </p>
-									<div class='price_single'>
-									  <span class='reducedfrom'><del></del> Rs $pro_price</span>
 									
-									 <div class='clearfix'></div>
+									<div class='price_single'>
+									<span class='reducedfrom'><del></del> EGP $pro_price <br> $egyptianProductLabel</span>
+									<div class='clearfix'></div>
 									</div>
 									<h4 class='quick'>Quick Overview:</h4>
 									<p class='quick_desc'> $pro_desc </p>
+									
 								
 									 <div class='add-to'>
-										   <button class='btn btn-danger my-cart-btn my-cart-btn1' data-id='$pro_id' data-name='$pro_title' data-summary='summary' data-price='$pro_price' data-quantity='1' data-image='images/$pro_image'>Add to Cart</button>
+										   <button class='btn btn-danger my-cart-btn my-cart-btn1' data-id='$pro_id' data-name='$pro_title' data-isEgyptian='$pro_nationality' data-summary='summary' data-price='$pro_price' data-quantity='1' data-image='images/$pro_image'>Add to Cart</button>
 										</div>
 								</div>
 								<div class='clearfix'> </div>
