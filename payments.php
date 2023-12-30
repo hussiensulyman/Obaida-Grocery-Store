@@ -2,7 +2,7 @@
 session_start();
 $uname= $_SESSION['user'];
 
-if($uname != 'malbok@gmail.com'){
+if($uname != 'Obaida-Grocery@gmail.com'){
 	header("location: vendor.php");
 }
 ?>
