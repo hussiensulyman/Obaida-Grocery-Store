@@ -65,8 +65,5 @@ Launch the application through your web server. The default landing page should 
 ## Contact Information
 For support or queries regarding this project, please contact [Your Contact Information].
 
-## Demo:
-[Obaida Grocery Store Demo](https://obaida-grocery-store.000webhostapp.com/index.php)
-
 ## Demo
 You can view a live demo of the project here: [Obaida Grocery Store Demo](https://obaida-grocery-store.000webhostapp.com/index.php)
