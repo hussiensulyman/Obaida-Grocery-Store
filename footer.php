@@ -68,7 +68,7 @@ $cust= $_SESSION['customer'];
 			?>		
 		<div class="clearfix"></div>
 			<div class="footer-bottom">
-				<h2 ><a href="index.php"><b>T<br>H<br>E</b>Grocery Store<span>The Best Supermarket</span></a></h2>
+				<h2 ><a href="index.php"><b>T<br>H<br>E</b>Obaida Grocery Store<span>The Best Supermarket</span></a></h2>
 				<p class="fo-para"> We Believe in providing you with the Best, Fresh and Supreme Quality products for your daily kitchen, household and much more</p>
 				<ul class="social-fo">
 					<li><a href="#" class=" face"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -81,17 +81,17 @@ $cust= $_SESSION['customer'];
 							<p><i class="fa fa-home" aria-hidden="true"></i> Address </p>
 					</div>
 					<div class="col-md-4 fo-grid1">
-							<p><i class="fa fa-phone" aria-hidden="true"></i> +91 1234567890 </p>	
+							<p><i class="fa fa-phone" aria-hidden="true"></i> +20 1234567890 </p>	
 					</div>
 					<div class="col-md-4 fo-grid1">
-						<p><a href="mailto:info@example.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> mart@gmail.com </a></p>
+						<p><a href="mailto:info@example.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> Obaida-Grocery@gmail.com </a></p>
 					</div>
 					<div class="clearfix"></div>
 					
 					</div>
 			</div>
 		<div class="copy-right">
-			<p> &copy; 2019 Grocery store. All Rights Reserved  </a></p>
+			<p> &copy; 2023 Obaida Grocery store. All Rights Reserved  </a></p>
 		</div>
 	</div>
 </div>

@@ -11,12 +11,12 @@ error_reporting(0);
 <!DOCTYPE html>
 <html>
 <head>
-<title>Grocery Store</title>
+<title>Obaida Grocery Store</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta property="og:title" content="Vide" />
-<meta name="keywords" content="Grocery Store" />
+<meta name="keywords" content="Obaida Grocery Store" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //for-mobile-apps -->
@@ -75,7 +75,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<div class="container">
 			
 			<div class="logo">
-				<h1 ><a href="index.php"><b>T<br>H<br>E</b>Grocery Store<span>The Best Supermarket</span></a></h1>
+				<h1 ><a href="index.php"><b>T<br>H<br>E</b>Obaida Grocery Store<span>The Best Supermarket</span></a></h1>
 			</div>
 			<div class="head-t">
 				<ul class="card">
@@ -152,7 +152,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									$vendor= $res['email'];
 								}*/
 
-								$q2= "SELECT * FROM products WHERE product_cat=17 LIMIT 4";
+								$q2= "SELECT *, isEgyptian FROM products WHERE product_cat=17 LIMIT 4";
 								$data2= mysqli_query($conn, $q2);
 								$total2= mysqli_num_rows($data2);
 								
@@ -168,10 +168,13 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 										<div class="women">
 											<h6>
 												<?php echo $res2['product_title'];?>
-											</h6>							
+											</h6>
+											<?php if($res2['isEgyptian'] == 1): ?>
+                                        		<p style="background-color: green;color: white; text-align: center; padding: 5px; margin-top: 5px; font-weight: bold;">Egyptian Product</p>
+                                   			<?php endif; ?>							
 										</div>
 										<div class="mid-2">
-											<p ><label> Rs <?php echo $res2['product_price'] +20;?></label><em class="item_price"> Rs <?php echo $res2['product_price'];?></em></p>
+											<p ><label> EGP <?php echo $res2['product_price'] +20;?></label><em class="item_price"> EGP <?php echo $res2['product_price'];?></em></p>
 											  <div class="block">
 												<div class="starbox small ghosting"> </div>
 											</div>
@@ -208,7 +211,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 								}*/
 
 								/*echo $vendor;*/
-								$q2= "SELECT * FROM products WHERE product_cat=20 LIMIT 4";
+								$q2= "SELECT *, isEgyptian FROM products WHERE product_cat=20 LIMIT 4";
 								$data2= mysqli_query($conn, $q2);
 								$total2= mysqli_num_rows($data2);
 								
@@ -224,10 +227,13 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 										<div class="women">
 											<h6>
 												<?php echo $res2['product_title'];?>
-											</h6>							
+											</h6>
+											<?php if($res2['isEgyptian'] == 1): ?>
+                                        		<p style="background-color: green;color: white; text-align: center; padding: 5px; margin-top: 5px; font-weight: bold;">Egyptian Product</p>
+                                   			<?php endif; ?>							
 										</div>
 										<div class="mid-2">
-											<p ><label> Rs <?php echo $res2['product_price'] +20;?></label><em class="item_price"> Rs <?php echo $res2['product_price'];?></em></p>
+											<p ><label> EGP <?php echo $res2['product_price'] +20;?></label><em class="item_price"> EGP <?php echo $res2['product_price'];?></em></p>
 											  <div class="block">
 												<div class="starbox small ghosting"> </div>
 											</div>
@@ -264,7 +270,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 								}*/
 
 								/*echo $vendor;*/
-								$q2= "SELECT * FROM products WHERE product_cat=16 LIMIT 4";
+								$q2= "SELECT *, isEgyptian FROM products WHERE product_cat=16 LIMIT 4";
 								$data2= mysqli_query($conn, $q2);
 								$total2= mysqli_num_rows($data2);
 								
@@ -280,10 +286,13 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 										<div class="women">
 											<h6>
 												<?php echo $res2['product_title'];?>
-											</h6>							
+											</h6>
+											<?php if($res2['isEgyptian'] == 1): ?>
+                                        		<p style="background-color: green;color: white; text-align: center; padding: 5px; margin-top: 5px; font-weight: bold;">Egyptian Product</p>
+                                   			<?php endif; ?>							
 										</div>
 										<div class="mid-2">
-											<p ><label> Rs <?php echo $res2['product_price'] +20;?></label><em class="item_price"> Rs <?php echo $res2['product_price'];?></em></p>
+											<p ><label> EGP <?php echo $res2['product_price'] +20;?></label><em class="item_price"> EGP <?php echo $res2['product_price'];?></em></p>
 											  <div class="block">
 												<div class="starbox small ghosting"> </div>
 											</div>
@@ -320,7 +329,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 								}*/
 
 								/*echo $vendor;*/
-								$q2= "SELECT * FROM products WHERE product_cat=19 LIMIT 4";
+								$q2= "SELECT *, isEgyptian FROM products WHERE product_cat=19 LIMIT 4";
 								$data2= mysqli_query($conn, $q2);
 								$total2= mysqli_num_rows($data2);
 								
@@ -336,10 +345,13 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 										<div class="women">
 											<h6>
 												<?php echo $res2['product_title'];?>
-											</h6>							
+											</h6>
+											<?php if($res2['isEgyptian'] == 1): ?>
+                                        		<p style="background-color: green;color: white; text-align: center; padding: 5px; margin-top: 5px; font-weight: bold;">Egyptian Product</p>
+                                   			<?php endif; ?>							
 										</div>
 										<div class="mid-2">
-											<p ><label> Rs <?php echo $res2['product_price'] +20;?></label><em class="item_price"> Rs <?php echo $res2['product_price'];?></em></p>
+											<p ><label> EGP <?php echo $res2['product_price'] +20;?></label><em class="item_price"> EGP <?php echo $res2['product_price'];?></em></p>
 											  <div class="block">
 												<div class="starbox small ghosting"> </div>
 											</div>
@@ -484,7 +496,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 								}*/
 
 								/*echo $vendor;*/
-								$q2= "SELECT * FROM products LIMIT 16, 24";
+								$q2= "SELECT *, isEgyptian FROM products LIMIT 16, 24";
 								$data2= mysqli_query($conn, $q2);
 								$total2= mysqli_num_rows($data2);
 								
@@ -499,10 +511,13 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 										<div class="women">
 											<h6>
 												<?php echo $res2['product_title'];?>
-											</h6>							
+											</h6>
+											<?php if($res2['isEgyptian'] == 1): ?>
+                                        		<p style="background-color: green;color: white; text-align: center; padding: 5px; margin-top: 5px; font-weight: bold;">Egyptian Product</p>
+                                   			<?php endif; ?>							
 										</div>
 										<div class="mid-2">
-											<p ><label> Rs <?php echo $res2['product_price'] +20;?></label><em class="item_price"> Rs <?php echo $res2['product_price'];?></em></p>
+											<p ><label> EGP <?php echo $res2['product_price'] +20;?></label><em class="item_price"> EGP <?php echo $res2['product_price'];?></em></p>
 											  <div class="block">
 												<div class="starbox small ghosting"> </div>
 											</div>
@@ -533,7 +548,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 											<h6><a href="single.php">  Lady Finger</a>(250 g)</h6>							
 										</div>
 										<div class="mid-2">
-											<p ><label> Rs 5.00</label><em class="item_price"> Rs 4.50</em></p>
+											<p ><label> EGP 5.00</label><em class="item_price"> EGP 4.50</em></p>
 											  <div class="block">
 												<div class="starbox small ghosting"> </div>
 											</div>
@@ -555,7 +570,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 											<h6><a href="single.php"> Ribbon</a>(1 pc)</h6>							
 										</div>
 										<div class="mid-2">
-											<p ><label> Rs 4.00</label><em class="item_price"> Rs 3.50</em></p>
+											<p ><label> EGP 4.00</label><em class="item_price"> EGP 3.50</em></p>
 											  <div class="block">
 												<div class="starbox small ghosting"> </div>
 											</div>
@@ -577,7 +592,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 											<h6><a href="single.php">Grapes</a>(500 g)</h6>							
 										</div>
 										<div class="mid-2">
-											<p ><label> Rs 1.00</label><em class="item_price"> Rs 0.80</em></p>
+											<p ><label> EGP 1.00</label><em class="item_price"> EGP 0.80</em></p>
 											  <div class="block">
 												<div class="starbox small ghosting"> </div>
 											</div>
@@ -600,7 +615,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 											<h6><a href="single.php">Clips</a>(1 pack)</h6>							
 										</div>
 										<div class="mid-2">
-											<p ><label> Rs 7.00</label><em class="item_price"> Rs 6.00</em></p>
+											<p ><label> EGP 7.00</label><em class="item_price"> EGP 6.00</em></p>
 											  <div class="block">
 												<div class="starbox small ghosting"> </div>
 											</div>
@@ -622,7 +637,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 											<h6><a href="single.php">Conditioner</a>(250 g)</h6>							
 										</div>
 										<div class="mid-2">
-											<p ><label> Rs 5.00</label><em class="item_price"> Rs 4.50</em></p>
+											<p ><label> EGP 5.00</label><em class="item_price"> EGP 4.50</em></p>
 											  <div class="block">
 												<div class="starbox small ghosting"> </div>
 											</div>
@@ -644,7 +659,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 											<h6><a href="single.php">Cleaner</a>(250 kg)</h6>							
 										</div>
 										<div class="mid-2">
-											<p ><label> Rs 4.00</label><em class="item_price"> Rs 3.50</em></p>
+											<p ><label> EGP 4.00</label><em class="item_price"> EGP 3.50</em></p>
 											  <div class="block">
 												<div class="starbox small ghosting"> </div>
 											</div>
@@ -666,7 +681,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 											<h6><a href="single.php">Gel</a>(150 g)</h6>							
 										</div>
 										<div class="mid-2">
-											<p ><label> Rs 1.00</label><em class="item_price"> Rs 0.80</em></p>
+											<p ><label> EGP 1.00</label><em class="item_price"> EGP 0.80</em></p>
 											  <div class="block">
 												<div class="starbox small ghosting"> </div>
 											</div>
@@ -796,7 +811,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h3>Sunflower Oil(5 kg)</h3>
 									<p class="in-para"> Some attractive Heading</p>
 									<div class="price_single">
-									  <span class="reducedfrom "><del> Rs 10.00</del> Rs 9.00</span>
+									  <span class="reducedfrom "><del> EGP 10.00</del> EGP 9.00</span>
 									
 									 <div class="clearfix"></div>
 									</div>
@@ -828,7 +843,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h3>Kabuli Chana(1 kg)</h3>
 									<p class="in-para"> Some attractive Heading</p>
 									<div class="price_single">
-									  <span class="reducedfrom "><del> Rs 3.00</del> Rs 2.00</span>
+									  <span class="reducedfrom "><del> EGP 3.00</del> EGP 2.00</span>
 									
 									 <div class="clearfix"></div>
 									</div>
@@ -860,7 +875,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h3>Soya Chunks(1 kg)</h3>
 									<p class="in-para"> Some attractive Heading</p>
 									<div class="price_single">
-									  <span class="reducedfrom "><del> Rs 4.00</del> Rs 3.50</span>
+									  <span class="reducedfrom "><del> EGP 4.00</del> EGP 3.50</span>
 									
 									 <div class="clearfix"></div>
 									</div>
@@ -892,7 +907,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h3>Lays(100 g)</h3>
 									<p class="in-para"> Some attractive Heading</p>
 									<div class="price_single">
-									  <span class="reducedfrom "><del> Rs 1.00</del> Rs 0.70</span>
+									  <span class="reducedfrom "><del> EGP 1.00</del> EGP 0.70</span>
 									
 									 <div class="clearfix"></div>
 									</div>
@@ -924,7 +939,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h3>Kurkure(100 g)</h3>
 									<p class="in-para"> Some attractive Heading</p>
 									<div class="price_single">
-									  <span class="reducedfrom "><del> Rs 1.00</del> Rs 0.70</span>
+									  <span class="reducedfrom "><del> EGP 1.00</del> EGP 0.70</span>
 									
 									 <div class="clearfix"></div>
 									</div>
@@ -956,7 +971,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h3>Popcorn(250 g)</h3>
 									<p class="in-para"> Some attractive Heading</p>
 									<div class="price_single">
-									  <span class="reducedfrom "><del> Rs 2.00</del> Rs 1.00</span>
+									  <span class="reducedfrom "><del> EGP 2.00</del> EGP 1.00</span>
 									
 									 <div class="clearfix"></div>
 									</div>
@@ -988,7 +1003,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h3>Nuts(250 g)</h3>
 									<p class="in-para"> Some attractive Heading</p>
 									<div class="price_single">
-									  <span class="reducedfrom "><del> Rs 4.00</del> Rs 3.50</span>
+									  <span class="reducedfrom "><del> EGP 4.00</del> EGP 3.50</span>
 									
 									 <div class="clearfix"></div>
 									</div>
@@ -1020,7 +1035,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h3>Banana(6 pcs)</h3>
 									<p class="in-para"> Some attractive Heading</p>
 									<div class="price_single">
-									  <span class="reducedfrom "><del> Rs 2.00</del> Rs 1.50</span>
+									  <span class="reducedfrom "><del> EGP 2.00</del> EGP 1.50</span>
 									
 									 <div class="clearfix"></div>
 									</div>
@@ -1052,7 +1067,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h3>Onion(1 kg)</h3>
 									<p class="in-para"> Some attractive Heading</p>
 									<div class="price_single">
-									  <span class="reducedfrom "><del> Rs 1.00</del> Rs 0.70</span>
+									  <span class="reducedfrom "><del> EGP 1.00</del> EGP 0.70</span>
 									
 									 <div class="clearfix"></div>
 									</div>
@@ -1084,7 +1099,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h3>Bitter Gourd(1 kg)</h3>
 									<p class="in-para"> Some attractive Heading</p>
 									<div class="price_single">
-									  <span class="reducedfrom "><del> Rs 2.00</del> Rs 1.00</span>
+									  <span class="reducedfrom "><del> EGP 2.00</del> EGP 1.00</span>
 									
 									 <div class="clearfix"></div>
 									</div>
@@ -1116,7 +1131,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h3>Apples(1 kg)</h3>
 									<p class="in-para"> Some attractive Heading</p>
 									<div class="price_single">
-									  <span class="reducedfrom "><del> Rs 4.00</del> Rs 3.50</span>
+									  <span class="reducedfrom "><del> EGP 4.00</del> EGP 3.50</span>
 									
 									 <div class="clearfix"></div>
 									</div>
@@ -1148,7 +1163,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h3>Honey(500 g)</h3>
 									<p class="in-para"> Some attractive Heading</p>
 									<div class="price_single">
-									  <span class="reducedfrom "><del> Rs 7.00</del> Rs 6.00</span>
+									  <span class="reducedfrom "><del> EGP 7.00</del> EGP 6.00</span>
 									
 									 <div class="clearfix"></div>
 									</div>
@@ -1180,7 +1195,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h3>Chocos(250 g)</h3>
 									<p class="in-para"> Some attractive Heading</p>
 									<div class="price_single">
-									  <span class="reducedfrom "><del> Rs 5.00</del> Rs 4.50</span>
+									  <span class="reducedfrom "><del> EGP 5.00</del> EGP 4.50</span>
 									
 									 <div class="clearfix"></div>
 									</div>
@@ -1212,7 +1227,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h3>Oats(1 kg)</h3>
 									<p class="in-para"> Some attractive Heading</p>
 									<div class="price_single">
-									  <span class="reducedfrom "><del> Rs 4.00</del> Rs 3.50</span>
+									  <span class="reducedfrom "><del> EGP 4.00</del> EGP 3.50</span>
 									
 									 <div class="clearfix"></div>
 									</div>
@@ -1244,7 +1259,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h3>Bread(500 g)</h3>
 									<p class="in-para"> Some attractive Heading</p>
 									<div class="price_single">
-									  <span class="reducedfrom "><del> Rs 1.00</del> Rs 0.80</span>
+									  <span class="reducedfrom "><del> EGP 1.00</del> EGP 0.80</span>
 									
 									 <div class="clearfix"></div>
 									</div>
@@ -1276,7 +1291,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h3>Moisturiser(500 g)</h3>
 									<p class="in-para"> Some attractive Heading</p>
 									<div class="price_single">
-									  <span class="reducedfrom "><del> Rs 1.00</del> Rs 0.80</span>
+									  <span class="reducedfrom "><del> EGP 1.00</del> EGP 0.80</span>
 									
 									 <div class="clearfix"></div>
 									</div>
@@ -1308,7 +1323,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h3>Lady Finger(250 g)</h3>
 									<p class="in-para"> Some attractive Heading</p>
 									<div class="price_single">
-									  <span class="reducedfrom "><del> Rs 1.00</del> Rs 0.80</span>
+									  <span class="reducedfrom "><del> EGP 1.00</del> EGP 0.80</span>
 									
 									 <div class="clearfix"></div>
 									</div>
@@ -1340,7 +1355,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h3>Satin Ribbon Red(1 pc)</h3>
 									<p class="in-para"> Some attractive Heading</p>
 									<div class="price_single">
-									  <span class="reducedfrom "><del> Rs 1.00</del> Rs 0.80</span>
+									  <span class="reducedfrom "><del> EGP 1.00</del> EGP 0.80</span>
 									
 									 <div class="clearfix"></div>
 									</div>
@@ -1372,7 +1387,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h3>Grapes(500 g)</h3>
 									<p class="in-para"> Some attractive Heading</p>
 									<div class="price_single">
-									  <span class="reducedfrom "><del> Rs 1.00</del> Rs 0.80</span>
+									  <span class="reducedfrom "><del> EGP 1.00</del> EGP 0.80</span>
 									
 									 <div class="clearfix"></div>
 									</div>
@@ -1404,7 +1419,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h3>Clips(1 pack)</h3>
 									<p class="in-para"> Some attractive Heading</p>
 									<div class="price_single">
-									  <span class="reducedfrom "><del> Rs 1.00</del> Rs 0.80</span>
+									  <span class="reducedfrom "><del> EGP 1.00</del> EGP 0.80</span>
 									
 									 <div class="clearfix"></div>
 									</div>
@@ -1436,7 +1451,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h3>Conditioner</h3>
 									<p class="in-para"> Some attractive Heading</p>
 									<div class="price_single">
-									  <span class="reducedfrom "><del> Rs 1.00</del> Rs 0.80</span>
+									  <span class="reducedfrom "><del> EGP 1.00</del> EGP 0.80</span>
 									
 									 <div class="clearfix"></div>
 									</div>
@@ -1468,7 +1483,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h3>Cleaner(250 kg)</h3>
 									<p class="in-para"> Some attractive Heading</p>
 									<div class="price_single">
-									  <span class="reducedfrom "><del> Rs 1.00</del> Rs 0.80</span>
+									  <span class="reducedfrom "><del> EGP 1.00</del> EGP 0.80</span>
 									
 									 <div class="clearfix"></div>
 									</div>
@@ -1500,7 +1515,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h3>Gel(150 g)</h3>
 									<p class="in-para"> Some attractive Heading</p>
 									<div class="price_single">
-									  <span class="reducedfrom "><del> Rs 1.00</del> Rs 0.80</span>
+									  <span class="reducedfrom "><del> EGP 1.00</del> EGP 0.80</span>
 									
 									 <div class="clearfix"></div>
 									</div>

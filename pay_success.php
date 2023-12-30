@@ -1,86 +1,110 @@
-<?php 
+<?php
 session_start();
+require_once('vendor/autoload.php');
+\Stripe\Stripe::setApiKey('sk_test_51ORNFODJnQque40bnKNuOle4x7OXixQtFSs7R1Lux0J09qcABzzJXURkmSH7KP7wvonGkS5k5xbzdF8HJtudNwMH00KsXzAiVJ'); // Replace with your Stripe secret key
 
 include("connection.php");
 error_reporting(0);
 
-if(!isset($_SESSION['customer']))
-{
-	header("location:index.php");
+if (!isset($_SESSION['customer'])) {
+    header("location:index.php");
 }
 
-$cust= $_SESSION['customer'];
+$cust = $_SESSION['customer'];
+
+$paymentIntentId = isset($_GET['payment_intent_id']) ? $_GET['payment_intent_id'] : null;
+
+$paymentDetails = null; // Initialize an empty array for payment details
+
+if ($paymentIntentId) {
+    try {
+        $paymentIntent = \Stripe\PaymentIntent::retrieve($paymentIntentId);
+        // Assuming $paymentIntent contains the response from Stripe
+        $paymentDetails = [
+            'payment_id' => $paymentIntent->id,
+            'purpose' => $paymentIntent->metadata['purpose'],
+            'buyer_name' => $paymentIntent->metadata['buyer_name'],
+            'buyer_phone' => $paymentIntent->metadata['buyer_phone'],
+            'buyer_email' => $paymentIntent->metadata['buyer_email'],
+            'status' => $paymentIntent->status,
+        ];
+    } catch (\Stripe\Exception\ApiErrorException $e) {
+        // Handle Stripe API error
+        echo 'Stripe Error: ' . $e->getMessage();
+    }
+}
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-<title>Payment Page</title>
- <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-
+    <title>Payment Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
 <body>
-	 <?php 
-		    $q2= "SELECT * FROM customers WHERE email= '$cust'";
-			$data2= mysqli_query($conn, $q2);
-			while($res2= mysqli_fetch_assoc($data2)){
-				 $address= $res2['street'].", ".$res2['city'].", ".$res2['pincode'];
-			}
-			
-		    ?>
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="table-responsive">
-				<?php 
-					include("./instamojo/Instamojo.php");
-					$api = new Instamojo\Instamojo('test_1893cda3724555853115c973acd', 'test_e5f0906c73a453e3cc3283ff86a','https://test.instamojo.com/api/1.1/');
-					$pay_id= $_GET['payment_request_id'];
-					try{
-						$response= $api->paymentRequestStatus($pay_id);
-						?>
-						<h2 class="text-center text-black mb-5" style="margin-top: 20px;"> Payment Details </h2>
-						<table class="table table-bordered" style="margin-top: 40px;">
-							<tr>
-								<th>Purchased from</th>
-								<td><?= $response['purpose']; ?></td>
-							</tr>
-							<tr>
-								<th>Payment ID</th>
-								<td><?= $response['payments'][0]['payment_id']; ?></td>
-							</tr>
-							<tr>
-								<th>Buyer Name</th>
-								<td><?= $response['payments'][0]['buyer_name']; ?></td>
-							</tr>
-							<tr>
-								<th>Buyer Phone No.</th>
-								<td><?= $response['payments'][0]['buyer_phone']; ?></td>
-							</tr>
-							<tr>
-								<th>Buyer Email</th>
-								<td><?= $response['payments'][0]['buyer_email']; ?></td>
-							</tr>
-							<tr>
-								<th>Buyer Address</th>
-								<td><?= $address; ?></td>
-							</tr>
-							<tr>
-								<th>Payment Status</th>
-								<td><?= $response['payments'][0]['status']; ?></td>
-							</tr>
-							<tr>
-								<th>Order Date</th>
-								<td><?php 		    
-								date_default_timezone_set('Asia/Kolkata');
-								$date = date('d/m/Y H:i:s', time());
-								echo $date;?></td>
-							</tr>
-						</table>
+<?php
+$q2 = "SELECT * FROM customers WHERE email= '$cust'";
+$data2 = mysqli_query($conn, $q2);
+while ($res2 = mysqli_fetch_assoc($data2)) {
+    $address = $res2['street'] . ", " . $res2['city'] . ", " . $res2['pincode'];
+}
+?>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="table-resp">
+            <h2 class="text-center text-black mb-5" style="margin-top: 20px;"> Payment Details </h2>
+            <table class="table table-bordered" style="margin-top: 40px;">
+                <?php if ($paymentDetails): ?>
+                    <tr>
+                        <th>Payment ID</th>
+                        <td><?= htmlspecialchars($paymentDetails['payment_id']); ?></td>
+                    </tr>
+                    <tr>
+                        <th>Purchased from</th>
+                        <td><?= $paymentDetails['purpose']; ?></td>
+                    </tr>
+                    <tr>
+                        <th>Buyer Name</th>
+                        <td><?= $paymentDetails['buyer_name']; ?></td>
+                    </tr>
+                    <tr>
+                        <th>Buyer Phone No.</th>
+                        <td><?= $paymentDetails['buyer_phone']; ?></td>
+                    </tr>
+                    <tr>
+                        <th>Buyer Email</th>
+                        <td><?= $paymentDetails['buyer_email']; ?></td>
+                    </tr>
+                    <tr>
+                        <th>Payment Status</th>
+                        <td><?= $paymentDetails['status']; ?></td>
+                    </tr>
+                    <!-- You can add more payment details here as needed -->
+                <?php endif; ?>
+                <tr>
+                    <th>Buyer Address</th>
+                    <td><?= $address; ?></td>
+                </tr>
+                <tr>
+                    <th>Order Date</th>
+                    <td>
+                        <?php
+                        date_default_timezone_set('Asia/Kolkata');
+                        $date = date('d/m/Y H:i:s', time());
+                        echo $date;
+                        ?>
+                    </td>
+                </tr>
+            </table>
+            <div class="text-center mt-4">
+                <a href="index.php" class="btn btn-primary">Home Page</a>
+            </div>
+
 <?php
 require './phpmailer/PHPMailerAutoload.php';
 
@@ -100,7 +124,7 @@ $mail->Password = '14785269';                           // SMTP password
 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 587;                                    // TCP port to connect to
 
-$mail->setFrom('rfidlibrarypccoe@gmail.com', 'Grocery Store');
+$mail->setFrom('rfidlibrarypccoe@gmail.com', 'Obaida Grocery Store');
 $mail->addAddress($vendor);               // Name is optional
 
 $mail->isHTML(true);
@@ -133,7 +157,7 @@ $mail->Password = '14785269';                           // SMTP password
 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 587;                                    // TCP port to connect to
 
-$mail->setFrom('rfidlibrarypccoe@gmail.com', 'Grocery Store');
+$mail->setFrom('rfidlibrarypccoe@gmail.com', 'Obaida Grocery Store');
 $mail->addAddress($cust);               // Name is optional
 
 $mail->isHTML(true);
@@ -167,7 +191,7 @@ $mail->Password = '14785269';                           // SMTP password
 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 587;                                    // TCP port to connect to
 
-$mail->setFrom('rfidlibrarypccoe@gmail.com', 'Grocery Store');
+$mail->setFrom('rfidlibrarypccoe@gmail.com', 'Obaida Grocery Store');
 $mail->addAddress('gokhalehemal11@gmail.com');               // Name is optional
 
 $mail->isHTML(true);
@@ -268,11 +292,6 @@ if(!$mail->send()) {
 						print_r($names);
 						echo "<br />";
 						print_r($qtys);*/
-					}
-
-				}
-					catch (Exception $e) {
-    					print('Error: ' . $e->getMessage());
 					}
 				?>
 			</div>

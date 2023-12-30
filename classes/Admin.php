@@ -17,7 +17,7 @@ class Admin
 	}
 
 	public function getAdminList(){
-		$query = $this->con->query("SELECT `username`, `email`, `phone`, `street`, `city`, `pincode`  FROM `vendors` WHERE `email` != 'malbok@gmail.com' ");
+		$query = $this->con->query("SELECT `username`, `email`, `phone`, `street`, `city`, `pincode`  FROM `vendors` WHERE `email` != 'Obaida-Grocery@gmail.com' ");
 		$ar = [];
 		if ($query->num_rows > 0) {
 			while ($row = $query->fetch_assoc()) {
@@ -33,7 +33,7 @@ class Admin
 
 
 if (isset($_POST["GET_ADMIN"])) {
-	if ($_SESSION['user'] == 'malbok@gmail.com') {
+	if ($_SESSION['user'] == 'Obaida-Grocery@gmail.com') {
 		$a = new Admin();
 		echo json_encode($a->getAdminList());
 		exit();

@@ -21,7 +21,7 @@ $mail->Password = '14785269';                           // SMTP password
 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 587;                                    // TCP port to connect to
 
-$mail->setFrom('rfidlibrarypccoe@gmail.com', 'Grocery Store');
+$mail->setFrom('rfidlibrarypccoe@gmail.com', 'Obaida Grocery Store');
 $mail->addAddress('gokhalehemal11@gmail.com');               // Name is optional
 
 $mail->isHTML(true);

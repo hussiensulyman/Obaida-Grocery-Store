@@ -799,6 +799,7 @@ p.quick_desc {
 	margin: 1em 0 2em;
 }
 
+
 /* Shutter In Vertical */
 .my-cart-btn1 {
   display: inline-block;
@@ -993,6 +994,7 @@ ul.product-qty {
 }
 .pro-1 {
     margin-bottom: 2em;
+    height: 320px;
 }
 /*--causel--*/
 .carousel-indicators {
@@ -2839,6 +2841,7 @@ nav.navbar.navbar-default {
 .mid-1 h6 {
     font-size: 0.85em;
 }
+
 .mid-2 p {
     float: none;
 }

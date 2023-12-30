@@ -11,12 +11,12 @@ error_reporting(0);
 <!DOCTYPE html>
 <html>
 <head>
-<title>Grocery Store</title>
+<title>Obaida Grocery Store</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta property="og:title" content="Vide" />
-<meta name="keywords" content="Grocery Store" />
+<meta name="keywords" content="Obaida Grocery Store" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //for-mobile-apps -->
@@ -75,7 +75,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<div class="container">
 			
 			<div class="logo">
-				<h1 ><a href="index.php"><b>T<br>H<br>E</b>Grocery Store<span>The Best Supermarket</span></a></h1>
+				<h1 ><a href="index.php"><b>T<br>H<br>E</b>Obaida Grocery Store<span>The Best Supermarket</span></a></h1>
 			</div>
 
 			<?php 
@@ -184,7 +184,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 											</h6>							
 										</div>
 										<div class="mid-2">
-											<p ><label> Rs <?php echo $res2['product_price'] +20;?></label><em class="item_price"> Rs <?php echo $res2['product_price'];?></em></p>
+											<p ><label> EGP <?php echo $res2['product_price'] +20;?></label><em class="item_price"> EGP <?php echo $res2['product_price'];?></em></p>
 											  <div class="block">
 												<div class="starbox small ghosting"> </div>
 											</div>
@@ -209,7 +209,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 								?>
 								<?php 
 
-								$q2= "SELECT * FROM products LIMIT 8";
+								$q2= "SELECT *, isEgyptian FROM products LIMIT 8";
 								$data2= mysqli_query($conn, $q2);
 								$total2= mysqli_num_rows($data2);
 								
@@ -224,10 +224,13 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 										<div class="women">
 											<h6>
 												<?php echo $res2['product_title'];?>
-											</h6>							
+											</h6>
+											<?php if($res2['isEgyptian'] == 1): ?>
+                                        		<p style="background-color: green;color: white; text-align: center; padding: 5px; margin-top: 5px; font-weight: bold;">Egyptian Product</p>
+                                   			<?php endif; ?>							
 										</div>
 										<div class="mid-2">
-											<p ><label> Rs <?php echo $res2['product_price'] +20;?></label><em class="item_price"> Rs <?php echo $res2['product_price'];?></em></p>
+											<p ><label> EGP <?php echo $res2['product_price'] +20;?></label><em class="item_price"> EGP <?php echo $res2['product_price'];?></em></p>
 											  <div class="block">
 												<div class="starbox small ghosting"> </div>
 											</div>
