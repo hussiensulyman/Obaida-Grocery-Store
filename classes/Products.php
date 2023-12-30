@@ -35,9 +35,9 @@ class Products
 	public function getProducts(){
 		
 		$uname= $_SESSION['user'];
-		if($uname != 'malbok@gmail.com'){
+		if($uname != 'Obaida-Grocery@gmail.com'){
 
-			$q = $this->con->query("SELECT p.product_id, p.product_title, p.product_price,p.product_qty, p.product_desc, p.product_image, c.cat_title, c.cat_id, b.brand_id, b.brand_title FROM products p JOIN categories c ON c.cat_id = p.product_cat JOIN brands b ON b.brand_id = p.product_brand WHERE p.vendor_name= '$uname'");
+			$q = $this->con->query("SELECT p.product_id, p.product_title, p.product_price, p.product_qty, p.product_desc, p.product_image, p.isEgyptian, c.cat_title, c.cat_id, b.brand_id, b.brand_title FROM products p JOIN categories c ON c.cat_id = p.product_cat JOIN brands b ON b.brand_id = p.product_brand WHERE p.vendor_name= '$uname'");
 			
 			$products = [];
 			if ($q->num_rows > 0) {
@@ -72,7 +72,7 @@ class Products
 			return ['status'=> 202, 'message'=> $_DATA];
 	}
 	else{
-			$q = $this->con->query("SELECT p.product_id, p.product_title, p.product_price,p.product_qty, p.product_desc, p.product_image, c.cat_title, c.cat_id, b.brand_id, b.brand_title FROM products p JOIN categories c ON c.cat_id = p.product_cat JOIN brands b ON b.brand_id = p.product_brand ");
+		$q = $this->con->query("SELECT p.product_id, p.product_title, p.product_price, p.product_qty, p.product_desc, p.product_image, p.isEgyptian, c.cat_title, c.cat_id, b.brand_id, b.brand_title FROM products p JOIN categories c ON c.cat_id = p.product_cat JOIN brands b ON b.brand_id = p.product_brand");
 			
 			$products = [];
 			if ($q->num_rows > 0) {
