@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2023 at 12:56 AM
+-- Generation Time: Jan 02, 2024 at 03:32 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -38,13 +38,13 @@ CREATE TABLE `brands` (
 --
 
 INSERT INTO `brands` (`brand_id`, `brand_title`, `vendor_name`) VALUES
-(12, 'Nestle', 'malbok@gmail.com'),
-(13, 'Other', 'malbok@gmail.com'),
-(14, 'kitchen', 'malbok@gmail.com'),
-(15, 'household', 'malbok@gmail.com'),
-(16, 'personal care', 'malbok@gmail.com'),
-(17, 'bakery, eggs and meat', 'malbok@gmail.com'),
-(18, 'snacks', 'malbok@gmail.com');
+(12, 'Nestle', 'Obaida-Grocery@gmail.com'),
+(13, 'Other', 'Obaida-Grocery@gmail.com'),
+(14, 'kitchen', 'Obaida-Grocery@gmail.com'),
+(15, 'household', 'Obaida-Grocery@gmail.com'),
+(16, 'personal care', 'Obaida-Grocery@gmail.com'),
+(17, 'bakery, eggs and meat', 'Obaida-Grocery@gmail.com'),
+(18, 'snacks', 'Obaida-Grocery@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -78,58 +78,58 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`cat_id`, `cat_title`, `vendor_name`, `cat_name`) VALUES
-(15, 'water and beverages', 'malbok@gmail.com', 'water_and_beverages'),
-(16, 'fruits and vegetables', 'malbok@gmail.com', 'fruits_and_vegetables'),
-(17, 'staples', 'malbok@gmail.com', 'staples'),
-(18, 'branded food', 'malbok@gmail.com', 'branded_food'),
-(19, 'breakfast and cereal', 'malbok@gmail.com', 'breakfast_and_cereal'),
-(20, 'snacks', 'malbok@gmail.com', 'snacks'),
-(21, 'spices', 'malbok@gmail.com', 'spices'),
-(22, 'sweets', 'malbok@gmail.com', 'sweets'),
-(23, 'pickle and condiment', 'malbok@gmail.com', 'pickle_and_condiment'),
-(24, 'instant food', 'malbok@gmail.com', 'instant_food'),
-(25, 'dryfruit', 'malbok@gmail.com', 'dryfruit'),
-(27, 'ayurvedic', 'malbok@gmail.com', 'ayurvedic'),
-(28, 'babycare', 'malbok@gmail.com', 'babycare'),
-(29, 'cosmetics', 'malbok@gmail.com', 'cosmetics'),
-(30, 'deo and perfumes', 'malbok@gmail.com', 'deo_and_perfumes'),
-(31, 'haircare', 'malbok@gmail.com', 'haircare'),
-(32, 'oralcare', 'malbok@gmail.com', 'oralcare'),
-(33, 'personal hygiene', 'malbok@gmail.com', 'personal_hygiene'),
-(34, 'skincare', 'malbok@gmail.com', 'skincare'),
-(35, 'fashion accessories', 'malbok@gmail.com', 'fashion_accessories'),
-(36, 'grooming tools', 'malbok@gmail.com', 'grooming_tools'),
-(37, 'shaving needs', 'malbok@gmail.com', 'shaving_needs'),
-(38, 'sanitary needs', 'malbok@gmail.com', 'sanitary_needs'),
-(39, 'noodles and pasta', 'malbok@gmail.com', 'noodles_and_pasta'),
-(41, 'biscuit and cookies', 'malbok@gmail.com', 'biscuit_and_cookies'),
-(42, 'sauces and ketchups', 'malbok@gmail.com', 'sauces_and_ketchups'),
-(43, 'chocolates and candies', 'malbok@gmail.com', 'chocolates_and_candies'),
-(44, 'frozen veggies', 'malbok@gmail.com', 'frozen_veggies'),
-(45, 'snacks and namkeen', 'malbok@gmail.com', 'snacks_and_namkeen'),
-(46, 'indian mithai', 'malbok@gmail.com', 'indian_mithai'),
-(47, 'breads and buns', 'malbok@gmail.com', 'breads_and_buns'),
-(48, 'dairy', 'malbok@gmail.com', 'dairy'),
-(49, 'cakes and pastries', 'malbok@gmail.com', 'cakes_and_pastries'),
-(50, 'rusk and khari', 'malbok@gmail.com', 'rusk_and_khari'),
-(51, 'eggs', 'malbok@gmail.com', 'eggs'),
-(52, 'poultry', 'malbok@gmail.com', 'poultry'),
-(53, 'mutton and lamb', 'malbok@gmail.com', 'mutton_and_lamb'),
-(54, 'fish and seafood', 'malbok@gmail.com', 'fish_and_seafood'),
-(55, 'pork and others', 'malbok@gmail.com', 'pork_and_others'),
-(56, 'icecream', 'malbok@gmail.com', 'icecream'),
-(57, 'cleaning accessories', 'malbok@gmail.com', 'cleaning_accessories'),
-(58, 'cookwear', 'malbok@gmail.com', 'cookwear'),
-(59, 'detergents', 'malbok@gmail.com', 'detergents'),
-(60, 'gardening', 'malbok@gmail.com', 'gardening'),
-(61, 'kitchen and dining', 'malbok@gmail.com', 'kitchen_and_dining'),
-(62, 'kitchenwear', 'malbok@gmail.com', 'kitchenwear'),
-(63, 'petcare', 'malbok@gmail.com', 'petcare'),
-(64, 'plasticwear', 'malbok@gmail.com', 'plasticwear'),
-(65, 'pooja needs', 'malbok@gmail.com', 'pooja_needs'),
-(66, 'safety accessories', 'malbok@gmail.com', 'safety_accessories'),
-(67, 'festive decoratives', 'malbok@gmail.com', 'festive_decoratives'),
-(68, 'toys and gifts', 'malbok@gmail.com', 'toys_and_gifts');
+(15, 'water and beverages', 'Obaida-Grocery@gmail.com', 'water_and_beverages'),
+(16, 'fruits and vegetables', 'Obaida-Grocery@gmail.com', 'fruits_and_vegetables'),
+(17, 'staples', 'Obaida-Grocery@gmail.com', 'staples'),
+(18, 'branded food', 'Obaida-Grocery@gmail.com', 'branded_food'),
+(19, 'breakfast and cereal', 'Obaida-Grocery@gmail.com', 'breakfast_and_cereal'),
+(20, 'snacks', 'Obaida-Grocery@gmail.com', 'snacks'),
+(21, 'spices', 'Obaida-Grocery@gmail.com', 'spices'),
+(22, 'sweets', 'Obaida-Grocery@gmail.com', 'sweets'),
+(23, 'pickle and condiment', 'Obaida-Grocery@gmail.com', 'pickle_and_condiment'),
+(24, 'instant food', 'Obaida-Grocery@gmail.com', 'instant_food'),
+(25, 'dryfruit', 'Obaida-Grocery@gmail.com', 'dryfruit'),
+(27, 'ayurvedic', 'Obaida-Grocery@gmail.com', 'ayurvedic'),
+(28, 'babycare', 'Obaida-Grocery@gmail.com', 'babycare'),
+(29, 'cosmetics', 'Obaida-Grocery@gmail.com', 'cosmetics'),
+(30, 'deo and perfumes', 'Obaida-Grocery@gmail.com', 'deo_and_perfumes'),
+(31, 'haircare', 'Obaida-Grocery@gmail.com', 'haircare'),
+(32, 'oralcare', 'Obaida-Grocery@gmail.com', 'oralcare'),
+(33, 'personal hygiene', 'Obaida-Grocery@gmail.com', 'personal_hygiene'),
+(34, 'skincare', 'Obaida-Grocery@gmail.com', 'skincare'),
+(35, 'fashion accessories', 'Obaida-Grocery@gmail.com', 'fashion_accessories'),
+(36, 'grooming tools', 'Obaida-Grocery@gmail.com', 'grooming_tools'),
+(37, 'shaving needs', 'Obaida-Grocery@gmail.com', 'shaving_needs'),
+(38, 'sanitary needs', 'Obaida-Grocery@gmail.com', 'sanitary_needs'),
+(39, 'noodles and pasta', 'Obaida-Grocery@gmail.com', 'noodles_and_pasta'),
+(41, 'biscuit and cookies', 'Obaida-Grocery@gmail.com', 'biscuit_and_cookies'),
+(42, 'sauces and ketchups', 'Obaida-Grocery@gmail.com', 'sauces_and_ketchups'),
+(43, 'chocolates and candies', 'Obaida-Grocery@gmail.com', 'chocolates_and_candies'),
+(44, 'frozen veggies', 'Obaida-Grocery@gmail.com', 'frozen_veggies'),
+(45, 'snacks and namkeen', 'Obaida-Grocery@gmail.com', 'snacks_and_namkeen'),
+(46, 'indian mithai', 'Obaida-Grocery@gmail.com', 'indian_mithai'),
+(47, 'breads and buns', 'Obaida-Grocery@gmail.com', 'breads_and_buns'),
+(48, 'dairy', 'Obaida-Grocery@gmail.com', 'dairy'),
+(49, 'cakes and pastries', 'Obaida-Grocery@gmail.com', 'cakes_and_pastries'),
+(50, 'rusk and khari', 'Obaida-Grocery@gmail.com', 'rusk_and_khari'),
+(51, 'eggs', 'Obaida-Grocery@gmail.com', 'eggs'),
+(52, 'poultry', 'Obaida-Grocery@gmail.com', 'poultry'),
+(53, 'mutton and lamb', 'Obaida-Grocery@gmail.com', 'mutton_and_lamb'),
+(54, 'fish and seafood', 'Obaida-Grocery@gmail.com', 'fish_and_seafood'),
+(55, 'pork and others', 'Obaida-Grocery@gmail.com', 'pork_and_others'),
+(56, 'icecream', 'Obaida-Grocery@gmail.com', 'icecream'),
+(57, 'cleaning accessories', 'Obaida-Grocery@gmail.com', 'cleaning_accessories'),
+(58, 'cookwear', 'Obaida-Grocery@gmail.com', 'cookwear'),
+(59, 'detergents', 'Obaida-Grocery@gmail.com', 'detergents'),
+(60, 'gardening', 'Obaida-Grocery@gmail.com', 'gardening'),
+(61, 'kitchen and dining', 'Obaida-Grocery@gmail.com', 'kitchen_and_dining'),
+(62, 'kitchenwear', 'Obaida-Grocery@gmail.com', 'kitchenwear'),
+(63, 'petcare', 'Obaida-Grocery@gmail.com', 'petcare'),
+(64, 'plasticwear', 'Obaida-Grocery@gmail.com', 'plasticwear'),
+(65, 'pooja needs', 'Obaida-Grocery@gmail.com', 'pooja_needs'),
+(66, 'safety accessories', 'Obaida-Grocery@gmail.com', 'safety_accessories'),
+(67, 'festive decoratives', 'Obaida-Grocery@gmail.com', 'festive_decoratives'),
+(68, 'toys and gifts', 'Obaida-Grocery@gmail.com', 'toys_and_gifts');
 
 -- --------------------------------------------------------
 
@@ -306,8 +306,31 @@ CREATE TABLE `vendors` (
 INSERT INTO `vendors` (`id`, `username`, `email`, `street`, `city`, `pincode`, `password`, `phone`, `ifsc`, `pan_card`) VALUES
 (5, 'hemal', 'hemal@gmail.com', 'hdfc colony', 'pune', '411019', 'hemal123', '9518786014', NULL, NULL),
 (7, 'Username', 'admin@gmail.com', 'Shivajinagar', 'Pune', '411001', 'admin123', '8149992015', NULL, NULL),
-(8, 'malbok', 'malbok@gmail.com', 'STR 2', 'Meghalaya', '411772', 'malbok123', '1223451334', NULL, NULL),
+(8, 'Obaida-Grocery', 'Obaida-Grocery@gmail.com', 'STR 2', 'Meghalaya', '411772', 'Obaida-Grocery123', '1223451334', NULL, NULL),
 (9, 'Chinmayee', 'gokhalehemal11@gmail.com', 'Chinchwad', 'Pune', '411019', 'c123', '1234567890', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vouchers`
+--
+
+CREATE TABLE `vouchers` (
+  `id` int(11) NOT NULL,
+  `code` varchar(50) NOT NULL,
+  `discount_percent` int(11) NOT NULL,
+  `expiry_date` date NOT NULL,
+  `usage_limit` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `vouchers`
+--
+
+INSERT INTO `vouchers` (`id`, `code`, `discount_percent`, `expiry_date`, `usage_limit`) VALUES
+(1, 'VOUCHER30', 30, '2024-01-12', 15),
+(2, 'VOUCHER20', 20, '2024-01-22', 50),
+(3, 'VOUCHER10', 10, '2024-02-01', 100);
 
 --
 -- Indexes for dumped tables
@@ -364,6 +387,12 @@ ALTER TABLE `vendors`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `vouchers`
+--
+ALTER TABLE `vouchers`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -414,6 +443,12 @@ ALTER TABLE `products`
 --
 ALTER TABLE `vendors`
   MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `vouchers`
+--
+ALTER TABLE `vouchers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
