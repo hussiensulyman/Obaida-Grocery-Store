@@ -24,7 +24,7 @@ Ensure that PHP, MySQL, and Apache Server are installed on your system. Tools li
 ### Step 2: Clone Repository
 Clone the repository to your desired location using:
 ```bash
-git clone [repository-link]
+git clone https://github.com/hussiensulyman/Obaida-Grocery-Store/
 ```
 
 ### Step 3: Database Configuration
@@ -57,13 +57,3 @@ Launch the application through your web server. The default landing page should 
 - **`images/`**: Holds images used across the application.
 - **`templates/`**: Reusable components such as headers and footers.
 - **`database/`**: Database schema and setup scripts.
-
-## Acknowledgments
-- Special thanks to all contributors and developers of this project.
-- Appreciation for open-source technologies used in this project.
-
-## Contact Information
-For support or queries regarding this project, please contact [Your Contact Information].
-
-## Demo
-You can view a live demo of the project here: [Obaida Grocery Store Demo](https://obaida-grocery-store.000webhostapp.com/index.php)
