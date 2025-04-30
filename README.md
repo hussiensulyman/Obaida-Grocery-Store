@@ -68,3 +68,4 @@ git clone https://github.com/hussiensulyman/Obaida-Grocery-Store/
 - **`images/`**: Stores images used throughout the platform.
 - **`templates/`**: Holds reusable components like headers and footers.
 - **`database/`**: Includes database schema and setup scripts.
+# Fresh Refactor Branch
